@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetFinder - Registro 2/3</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<div id="signup-step2-screen" class="screen active">
+        <div class="screen-header">
+            <h2>Cuéntanos de ti (El Dueño)</h2>
+            <p class="progress-indicator">Paso 2 de 3</p>
+        </div>
+        <form class="form-container">
+            <div class="input-group">
+                <label for="owner-name">Nombre Completo</label>
+                <input type="text" id="owner-name" placeholder="Tu Nombre Apellido" required>
+            </div>
+            <div class="input-group">
+                <label for="owner-country">País</label>
+                <select id="owner-country" required>
+                    <option value="">Selecciona tu país</option>
+                    <option value="ar">Argentina</option>
+                    <option value="mx">México</option>
+                    <option value="es">España</option>
+                    </select>
+            </div>
+            <div class="input-group">
+                <label for="owner-city">Ciudad / Provincia</label>
+                <input type="text" id="owner-city" placeholder="Ej: Buenos Aires" required>
+            </div>
+            <div class="input-group">
+                <label for="owner-pets-count">¿Cuántas mascotas tienes actualmente?</label>
+                <input type="number" id="owner-pets-count" min="0" value="0" required>
+            </div>
+            <a href="06-signup-step3.html" class="btn btn-primary">Continuar y Añadir Mascota</a>
+        </form>
+    </div>
+</body>
+</html>

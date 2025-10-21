@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetFinder - Tu Compañero Ideal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="splash-screen" class="screen active">
+        <div class="splash-content">
+            <img src="https://via.placeholder.com/150/FF6B6B/FFFFFF?text=PetFinder" alt="Logo de PetFinder" class="app-logo">
+            <p class="tagline">Encontrando hogares, uno a uno.</p>
+        </div>
+    </div>
+
+    <div id="onboarding-welcome" class="screen">
+        <div class="onboarding-header">
+            <img src="https://via.placeholder.com/100/FFD166/333333?text=🐶" alt="Perro Amistoso" class="onboarding-animal">
+            <h1>Hola, Humano. 👋</h1>
+            <p>¿Deseas Iniciar Sesión o Registrarte?</p>
+        </div>
+        <div class="onboarding-actions">
+            <button class="btn btn-primary" onclick="showScreen('login-screen')">Iniciar Sesión</button>
+            <button class="btn btn-secondary" onclick="showScreen('signup-step1-screen')">Registrarse</button>
+        </div>
+    </div>
+
+    <div id="login-screen" class="screen">
+        <div class="screen-header">
+            <img src="https://via.placeholder.com/80/6BFFD1/333333?text=🐾" alt="Pata" class="header-icon">
+            <h2>Bienvenido de vuelta</h2>
+        </div>
+        <form class="form-container">
+            <div class="input-group">
+                <label for="login-email">Correo Electrónico</label>
+                <input type="email" id="login-email" placeholder="tu@email.com" required>
+            </div>
+            <div class="input-group">
+                <label for="login-password">Contraseña</label>
+                <input type="password" id="login-password" placeholder="********" required>
+            </div>
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+            <p class="form-footer">¿No tienes cuenta? <a href="#" onclick="showScreen('signup-step1-screen')">Regístrate</a></p>
+        </form>
+    </div>
+
+    <div id="signup-step1-screen" class="screen">
+        <div class="screen-header">
+            <img src="https://via.placeholder.com/80/FF6B6B/FFFFFF?text=✨" alt="Estrella" class="header-icon">
+            <h2>Crea tu Cuenta PetFinder</h2>
+            <p class="progress-indicator">Paso 1 de 3</p>
+        </div>
+        <form class="form-container">
+            <div class="input-group">
+                <label for="signup-email">Correo Electrónico</label>
+                <input type="email" id="signup-email" placeholder="tu@email.com" required>
+            </div>
+            <div class="input-group">
+                <label for="signup-password">Contraseña</label>
+                <input type="password" id="signup-password" placeholder="mín. 8 caracteres" required>
+            </div>
+            <div class="input-group">
+                <label for="signup-confirm-password">Confirmar Contraseña</label>
+                <input type="password" id="signup-confirm-password" placeholder="repite tu contraseña" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="showScreen('signup-step2-screen')">Continuar</button>
+        </form>
+    </div>
+
+    <div id="signup-step2-screen" class="screen">
+        <div class="screen-header">
+            <img src="https://via.placeholder.com/80/6B6BFF/FFFFFF?text=👤" alt="Persona" class="header-icon">
+            <h2>Cuéntanos de ti (El Dueño)</h2>
+            <p class="progress-indicator">Paso 2 de 3</p>
+        </div>
+        <form class="form-container">
+            <div class="input-group">
+                <label for="owner-name">Nombre Completo</label>
+                <input type="text" id="owner-name" placeholder="Tu Nombre Apellido" required>
+            </div>
+            <div class="input-group">
+                <label for="owner-country">País</label>
+                <select id="owner-country" required>
+                    <option value="">Selecciona tu país</option>
+                    <option value="ar">Argentina</option>
+                    <option value="mx">México</option>
+                    <option value="es">España</option>
+                    </select>
+            </div>
+            <div class="input-group">
+                <label for="owner-city">Ciudad / Provincia</label>
+                <input type="text" id="owner-city" placeholder="Ej: Buenos Aires" required>
+            </div>
+            <div class="input-group">
+                <label for="owner-phone">Número de Teléfono (Opcional)</label>
+                <input type="tel" id="owner-phone" placeholder="+XX XXX XXX XXXX">
+            </div>
+            <div class="input-group">
+                <label for="owner-pets-count">¿Cuántas mascotas tienes actualmente?</label>
+                <input type="number" id="owner-pets-count" min="0" value="0" required>
+            </div>
+            <div class="input-group">
+                <label for="owner-role">¿Cuál es tu rol en PetFinder?</label>
+                <select id="owner-role" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="owner">Soy Dueño y quiero registrar mis mascotas.</option>
+                    <option value="adopter">Soy potencial Dueño y busco adoptar/ayudar.</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="owner-bio">Cuéntanos un poco sobre ti (Opcional)</label>
+                <textarea id="owner-bio" placeholder="Máx. 150 caracteres" maxlength="150"></textarea>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="showScreen('signup-step3-screen')">Continuar y Añadir Mascota</button>
+        </form>
+    </div>
+
+    <div id="signup-step3-screen" class="screen">
+        <div class="screen-header">
+            <img src="https://via.placeholder.com/80/FFD166/333333?text=🐶" alt="Perro" class="header-icon">
+            <h2>Registra a tu Compañero Peludo</h2>
+            <p class="progress-indicator">Paso 3 de 3 (Mascota 1)</p>
+        </div>
+        <form class="form-container">
+            <div class="input-group photo-upload">
+                <label>Foto de la Mascota</label>
+                <div class="upload-area">
+                    <span>Subir Foto</span>
+                    <input type="file" accept="image/*">
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="pet-name">Nombre</label>
+                <input type="text" id="pet-name" placeholder="Nombre de tu mascota" required>
+            </div>
+            <div class="input-group">
+                <label for="pet-type">Tipo de Mascota</label>
+                <select id="pet-type" required>
+                    <option value="">Selecciona el tipo</option>
+                    <option value="dog">Perro</option>
+                    <option value="cat">Gato</option>
+                    <option value="other">Otro</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="pet-breed">Raza (Opcional)</label>
+                <input type="text" id="pet-breed" placeholder="Ej: Labrador, Mestizo">
+            </div>
+            <div class="input-group">
+                <label for="pet-age">Edad</label>
+                <input type="text" id="pet-age" placeholder="Ej: 3 años, 6 meses" required>
+            </div>
+            <div class="input-group">
+                <label for="pet-health-conditions">Enfermedades/Condiciones Médicas (Opcional)</label>
+                <input type="text" id="pet-health-conditions" placeholder="Ej: Diabetes, alergias">
+            </div>
+            <div class="input-group radio-group">
+                <label>¿Está castrado/esterilizado?</label>
+                <div>
+                    <input type="radio" id="pet-neutered-yes" name="pet-neutered" value="yes">
+                    <label for="pet-neutered-yes">Sí</label>
+                    <input type="radio" id="pet-neutered-no" name="pet-neutered" value="no">
+                    <label for="pet-neutered-no">No</label>
+                </div>
+            </div>
+            <div class="input-group radio-group">
+                <label>¿Tiene todas sus vacunas al día?</label>
+                <div>
+                    <input type="radio" id="pet-vaccinated-yes" name="pet-vaccinated" value="yes">
+                    <label for="pet-vaccinated-yes">Sí</label>
+                    <input type="radio" id="pet-vaccinated-no" name="pet-vaccinated" value="no">
+                    <label for="pet-vaccinated-no">No</label>
+                    <input type="radio" id="pet-vaccinated-partial" name="pet-vaccinated" value="partial">
+                    <label for="pet-vaccinated-partial">Parcial</label>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="pet-aggressiveness">Nivel de Agresividad</label>
+                <select id="pet-aggressiveness" required>
+                    <option value="">Selecciona un nivel</option>
+                    <option value="none">Ninguna</option>
+                    <option value="low">Baja</option>
+                    <option value="medium">Media</option>
+                    <option value="high">Alta</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="pet-diet">Dieta/Tipo de Comida</label>
+                <input type="text" id="pet-diet" placeholder="Ej: Pienso Seco, Dieta BARF" required>
+            </div>
+            <div class="input-group radio-group">
+                <label>¿Esta mascota está en adopción?</label>
+                <div>
+                    <input type="radio" id="pet-for-adoption-yes" name="pet-for-adoption" value="yes">
+                    <label for="pet-for-adoption-yes">Sí</label>
+                    <input type="radio" id="pet-for-adoption-no" name="pet-for-adoption" value="no">
+                    <label for="pet-for-adoption-no">No</label>
+                </div>
+            </div>
+            <div class="input-group hidden" id="adoption-reason-group">
+                <label for="adoption-reason">Razón de la búsqueda (Adopción)</label>
+                <textarea id="adoption-reason" placeholder="Cuéntanos por qué buscas un hogar" maxlength="200"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar Mascota y Finalizar</button>
+            <button type="button" class="btn btn-secondary">Guardar y Añadir Otra Mascota</button>
+        </form>
+    </div>
+
+    <script>
+        // Función simple para mostrar/ocultar pantallas (requiere JS)
+        function showScreen(id) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+
+        // Simula la Splash Screen (eliminar si se usa un framework o manejo de carga real)
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.getElementById('splash-screen').classList.remove('active');
+                document.getElementById('onboarding-welcome').classList.add('active');
+            }, 5000); // 5 segundos
+        });
+
+        // Lógica para mostrar/ocultar "Razón de Adopción"
+        const petForAdoptionRadios = document.querySelectorAll('input[name="pet-for-adoption"]');
+        const adoptionReasonGroup = document.getElementById('adoption-reason-group');
+
+        petForAdoptionRadios.forEach(radio => {
+            radio.addEventListener('change', (event) => {
+                if (event.target.value === 'yes') {
+                    adoptionReasonGroup.classList.remove('hidden');
+                } else {
+                    adoptionReasonGroup.classList.add('hidden');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetFinder - Splash</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<div id="splash-screen" class="screen">
+        <div class="splash-content">
+            <video class="app-logo" autoplay muted loop playsinline>
+            <source src="/assets/Animación_de_CatDog_estilo_Cartoon_Network.mp4" type="video/mp4">
+        </video>
+            <p class="tagline">Encontrando su casa, con tu ayuda.</p>
+        </div>
+    </div>
+
+    <script>
+        // Redirige a la pantalla de bienvenida después de 5 segundos
+        setTimeout(() => {
+            window.location.href = '02-welcome.html';
+        }, 5000); 
+    </script>
+</body>
+</html>

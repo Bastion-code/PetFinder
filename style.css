@@ -1,0 +1,445 @@
+/* Variables CSS para colores */
+:root {
+    --primary-color: #FF6B6B; /* Rojo/Rosa de los botones principales */
+    --secondary-color: #6B6BFF; /* Azul suave */
+    --accent-color: #FFD166; /* Amarillo */
+    --text-color-dark: #333333;
+    --text-color-light: #FFFFFF;
+    --bg-color-light: #F8F8F8; /* Fondo claro general */
+    --input-border-color: #DEDEDE;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Base global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita scroll horizontal */
+    background-color: #FF6B6B;
+}
+  /* Estilos específicos para que esta pantalla siempre ocupe todo el espacio */
+#splash-screen.screen {
+    display: flex !important; /* Asegura que se muestre inmediatamente */
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+}
+/* Estilos para cada "pantalla" */
+.screen {
+    width: 100%;
+    max-width: 375px; /* Ancho típico de un móvil */
+    height: 100vh; /* Ocupa toda la altura de la vista */
+    max-height: 812px; /* Altura típica de un móvil (iPhone X) */
+    background-color: #FFFFFF;
+    box-shadow: 0 0 20px var(--shadow-color);
+    border-radius: 25px; /* Bordes redondeados como en la imagen */
+    overflow-y: auto; /* Para pantallas con contenido largo */
+    display: none; /* Por defecto, todas ocultas */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* Para posicionar elementos internos */
+}
+
+.screen.active {
+    display: flex; /* Mostrar la pantalla activa */
+}
+
+/* Splash Screen específica */
+#splash-screen {
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color); /* Un color sólido de la marca */
+    color: var(--text-color-light);
+}
+
+.splash-content {
+    text-align: center;
+}
+
+.app-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Hace el video circular */
+    object-fit: cover;  /* Asegura que el video llene el círculo sin deformarse */
+    margin-bottom: 20px;
+    border: 3px solid white; /* Opcional: un borde para que se vea mejor */
+}
+
+.tagline {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* Estilos de encabezado para las pantallas */
+.screen-header {
+    text-align: center;
+    margin-bottom: 35px;
+    padding-top: 10px; /* Espacio superior */
+}
+
+.screen-header .header-icon {
+    max-width: 180px;       
+    height: auto;     /* Mantiene la proporción original */
+    object-fit: cover;   /* Ajusta la imagen sin deformarla */ 
+    margin-bottom: 40px; 
+}
+
+.screen-header h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.screen-header p.progress-indicator {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Onboarding */
+#onboarding-welcome {
+    background-color: #ffffff; /* Color de fondo rosa pálido */
+    justify-content: flex-start; /* Alinea el contenido hacia arriba */
+    padding-top: 60px;
+}
+
+#onboarding-welcome .onboarding-header {
+    margin-bottom: 40px;
+}
+.onboarding-animal {
+    display: block;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+#onboarding-welcome .onboarding-animal {
+    max-width: 220px;
+    height: auto;     /* Mantiene la proporción original */
+    margin-bottom: 25px;
+    object-fit: cover;   /* Ajusta la imagen sin deformarla */
+}
+
+.onboarding-header h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.onboarding-header p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+#onboarding-welcome .onboarding-actions {
+   
+    width: 100%;
+    max-width: 300px; 
+    display: flex;
+    flex-direction: column; 
+    gap: 40px; 
+    margin-top: auto; 
+    padding-bottom: 20px; 
+}
+
+#onboarding-welcome .btn {
+    width: auto;
+    display: inline-block; /* Permite que el ancho sea automático */
+    padding: 15px 25px;
+    border-radius: 25px; /* Bordes muy redondeados */
+    position: relative; /* Necesario para posicionar el triángulo de la burbuja */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+}
+#onboarding-welcome .btn-primary {
+    background-color: #ff6b6b; /* Color oscuro */
+    align-self: flex-start; /* Lo alinea a la izquierda */
+    border-bottom-left-radius: 5px; /* Esquina más recta para el triángulo */
+}
+#onboarding-welcome .btn-secondary {
+    background-color: #F26A83; /* Color rosa */
+    align-self: flex-end; /* Lo alinea a la derecha */
+    border-bottom-right-radius: 5px; /* Esquina más recta para el triángulo */
+}
+#onboarding-welcome .btn-primary::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 12px 0 12px;
+    border-color: #ff6b6b transparent transparent transparent;
+    transform: rotate(-40deg);
+}
+#onboarding-welcome .btn-secondary::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 12px 0 12px;
+    border-color: #F26A83 transparent transparent transparent;
+    transform: rotate(40deg);
+}
+
+/* Formularios */
+.form-container {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre grupos de input */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="password"],
+.input-group input[type="tel"],
+.input-group input[type="number"],
+.input-group select,
+.input-group textarea {
+    padding: 12px 15px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 10px;
+    font-size: 1em;
+    color: var(--text-color-dark);
+    background-color: var(--bg-color-light);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: var(--primary-color);
+}
+
+.input-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px;
+}
+
+/* Radio Buttons personalizados */
+.input-group.radio-group > div {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.input-group.radio-group input[type="radio"] {
+    display: none; /* Oculta el radio button nativo */
+}
+
+.input-group.radio-group input[type="radio"] + label {
+    background-color: #EEE;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.input-group.radio-group input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+}
+
+/* Subida de foto */
+.photo-upload .upload-area {
+    width: 100%;
+    height: 120px;
+    border: 2px dashed var(--input-border-color);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-upload .upload-area input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Botones */
+.btn {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    text-decoration: none; /* Para usar con <a> como botón */
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+}
+
+.btn-primary:hover {
+    background-color: #E05A5A;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+}
+
+.btn-secondary:hover {
+    background-color: #5A5AE0;
+    transform: translateY(-2px);
+}
+
+/* Enlaces */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #E05A5A;
+}
+
+.forgot-password {
+    text-align: right;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.form-footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+
+.form-footer a {
+    font-weight: 700;
+}
+
+/* Utilidades */
+.hidden {
+    display: none !important;
+}
+
+/* Media Queries para pantallas más pequeñas (opcional, pero buena práctica) */
+@media (max-width: 400px) {
+    .screen {
+        border-radius: 0; /* Sin bordes redondeados en pantallas muy pequeñas */
+        max-height: unset; /* Permite que ocupe la altura disponible */
+    }
+}
+
+/* ================================================ */
+/* ==== ESTILOS PARA LA PÁGINA DE PERFIL (NFC) ==== */
+/* ================================================ */
+
+/* Contenedor principal del perfil */
+.pet-profile-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Imagen de la mascota */
+.pet-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    border: 4px solid var(--primary-color);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mensaje principal de "mascota perdida" */
+.lost-pet-message {
+    margin-bottom: 25px;
+}
+
+.lost-pet-message h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.lost-pet-message p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Tabla de datos de la mascota */
+.pet-data-table {
+    width: 100%;
+    border-collapse: collapse; /* Une los bordes de la tabla */
+    text-align: left;
+    margin-top: 20px;
+}
+.pet-data-table th {
+    font-size: 1.2em;
+    font-weight: 700;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.pet-data-table td {
+    padding: 12px 5px;
+    border-bottom: 1px solid var(--input-border-color);
+}
+/* Para que la última fila no tenga borde inferior */
+.pet-data-table tr:last-child td {
+    border-bottom: none;
+}
+/* Estilo para la primera columna (la etiqueta) */
+.pet-data-table td:first-child {
+    font-weight: 600;
+    color: #444;
+}

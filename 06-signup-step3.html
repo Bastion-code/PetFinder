@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetFinder - Registro 3/3</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<div id="signup-step3-screen" class="screen active">
+        <div class="screen-header">
+            <h2>Registra a tu Compañero Peludo</h2>
+            <p class="progress-indicator">Paso 3 de 3 (Mascota 1)</p>
+        </div>
+        <form class="form-container">
+            <div class="input-group photo-upload">
+                <label>Foto de la Mascota</label>
+                <div class="upload-area">
+                    <span>Subir Foto</span>
+                    <input type="file" accept="image/*">
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="pet-name">Nombre</label>
+                <input type="text" id="pet-name" placeholder="Nombre de tu mascota" required>
+            </div>
+            <div class="input-group">
+                <label for="pet-type">Tipo de Mascota</label>
+                <select id="pet-type" required>
+                    <option value="">Selecciona el tipo</option>
+                    <option value="dog">Perro</option>
+                    <option value="cat">Gato</option>
+                    <option value="other">Otro</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="pet-health-conditions">Enfermedades/Condiciones Médicas (Opcional)</label>
+                <input type="text" id="pet-health-conditions" placeholder="Ej: Diabetes, alergias">
+            </div>
+            <div class="input-group">
+                <label for="pet-aggressiveness">Nivel de Agresividad</label>
+                <select id="pet-aggressiveness" required>
+                    <option value="">Selecciona un nivel</option>
+                    <option value="none">Ninguna</option>
+                    <option value="low">Baja</option>
+                    <option value="medium">Media</option>
+                    <option value="high">Alta</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="pet-diet">Dieta/Tipo de Comida</label>
+                <input type="text" id="pet-diet" placeholder="Ej: Pienso Seco, Dieta BARF" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar Mascota y Finalizar</button>
+            <a href="06-signup-step3.html" class="btn btn-secondary">Guardar y Añadir Otra Mascota</a>
+        </form>
+    </div>
+</body>
+</html>
